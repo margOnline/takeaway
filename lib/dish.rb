@@ -8,4 +8,5 @@ class Dish
     @price = price
   end
 
+
 end

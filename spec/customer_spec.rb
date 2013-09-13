@@ -19,6 +19,12 @@ describe Customer do
     expect(customer.fullname).to eq 'Amanda Addington'
   end
 
+  it 'places an order' do
+    takeaway = double :takeaway
+    takeaway.should_receive(:create_order).with(customer,'hawaiian', 2)
+    customer.order_food(takeaway,'hawaiian', 2)
+  end
+
 
   
 end

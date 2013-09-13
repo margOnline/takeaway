@@ -11,4 +11,11 @@ class Customer
     @first_name + ' ' + @last_name   
   end
 
+  def order_food(takeaway,dish, qty)
+    takeaway.create_order(self,dish, qty)
+  end
+
+
+
+
 end
