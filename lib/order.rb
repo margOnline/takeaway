@@ -1,5 +1,5 @@
 require_relative 'customer'
-require_relative 'dish'
+require_relative 'order_line'
 
 class Order
 
@@ -20,10 +20,6 @@ class Order
       item.price * 2     
     end
     total
-  end
-
-  def method_name
-    
   end
 
 end

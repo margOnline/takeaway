@@ -12,11 +12,13 @@ class Takeaway
     @menu = menu
   end
 
-  def create_order(customer,food_items)
-    @order_items = food_items.map {|line| Order_line.new } 
-    order = Order.new(customer,@order_items)
+  def create_order_line (food,quantity)
+    @order_items = Order_line.new(food, quantity) } 
   end
 
+  def create_order
+    Order.new(customer, @order_items)
+  end
     
 
 

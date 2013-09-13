@@ -1,3 +1,5 @@
+require 'takeaway'
+
 class Customer
 
   attr_reader :first_name, :full_name

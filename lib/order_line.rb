@@ -1,3 +1,5 @@
+require 'dish'
+
 class OrderLine
 
   attr_reader :quantity, :item
