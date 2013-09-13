@@ -1,12 +1,16 @@
-class Order_line
+class OrderLine
 
   attr_reader :quantity, :item
 
   def initialize(item, quantity)
-    @quantity, @item = quantity,item
+    @item, @quantity = item, quantity
   end
 
-  def subtotal
+  def price
+    @item.price
+  end
+
+  def total
     @item.price * @quantity
   end
 

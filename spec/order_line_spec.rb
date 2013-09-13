@@ -1,18 +1,19 @@
 require 'order_line'
 
-describe Order_line do
-  let(:order_line) {Order_line.new('hawaiian', 2)}
-
-  it 'has a item' do
-    expect(order_line.item).to eq 'hawaiian'
-  end
+describe OrderLine do
+  let(:hawaiian) { double :dish,:name => 'hawaiian', :price => 12.95 }
+  let(:order_line) { OrderLine.new(hawaiian,2) }
 
   it 'has a quantity' do
     expect(order_line.quantity).to eq 2
   end
 
-  it 'computes subtotal' do
-    expect(order_line.subtotal).to eq 25.90
+  it 'looks up the price for the item' do
+    expect(order_line.price).to eq 12.95
+  end
+
+  it 'computes line_total' do
+    expect(order_line.total).to eq 25.90
   end
 
 
