@@ -1,14 +1,14 @@
 require 'customer'
 
 describe Customer do 
-  let(:customer) {Customer.new('Amanda', 'Addington', '07741231234')}
+  let(:customer) {Customer.new('Marco', 'Polo', '07741231234')}
 
   it 'has a first name' do
-    expect(customer.first_name).to eq 'Amanda'
+    expect(customer.first_name).to eq 'Marco'
   end
 
-  it 'has a first name' do
-    expect(customer.last_name).to eq 'Addington'
+  it 'has a last name' do
+    expect(customer.last_name).to eq 'Polo'
   end
 
    it 'has a phone number' do
@@ -16,7 +16,7 @@ describe Customer do
   end
 
   it 'displays a full name' do
-    expect(customer.fullname).to eq 'Amanda Addington'
+    expect(customer.fullname).to eq 'Marco Polo'
   end
 
   it 'places an order' do

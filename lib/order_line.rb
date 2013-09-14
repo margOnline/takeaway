@@ -2,14 +2,10 @@ require 'dish'
 
 class OrderLine
 
-  attr_reader :quantity, :item
+  attr_reader :item, :quantity
 
   def initialize(item, quantity)
     @item, @quantity = item, quantity
-  end
-
-  def price
-    @item.price
   end
 
   def total

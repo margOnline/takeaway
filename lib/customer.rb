@@ -2,7 +2,7 @@ require 'takeaway'
 
 class Customer
 
-  attr_reader :first_name, :full_name
+  attr_reader :first_name
   attr_accessor :last_name, :phone
 
   def initialize(first_name, last_name, phone)

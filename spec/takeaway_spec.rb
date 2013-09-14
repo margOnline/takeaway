@@ -1,39 +1,25 @@
 require 'takeaway'
 
 describe Takeaway do
-  let(:dish1) {Dish.new('hawaiian',12.95)}
-  let(:dish2) {Dish.new('margherita', 11.95)}
-  let(:takeaway) {Takeaway.new('Jen\'s Pizzeria',[dish1, dish2])}
+  let(:dish1) {double :dish, :name=>'hawaiian', :price => 12.95}
+  let(:dish2) {double :dish, :name=>'margherita', :price => 9.95}
+  let(:customer) { double :customer,:first_name => 'Marco', :last_name => 'Polo', :phone => 1234567890 }
+  let(:takeaway) {Takeaway.new('Jen\'s Pizzeria',[dish1,dish2])}
 
   it 'has a name' do
     expect(takeaway.name).to eq 'Jen\'s Pizzeria'
   end
 
-  it 'creates a menu of dishes' do
-    expect(takeaway.menu).to eq [dish1, dish2]
+  it 'has a menu of dishes' do
+    expect(takeaway.menu).to eq [dish1,dish2]
   end
 
-  # it 'create an order when customer places one' do
-  #   customer = double :customer
-  #   expect(takeaway.create_order_line()).to be_a Order_line
-  # end
-
-it 'creates an order_line' do
-    takeaway = double :takeaway
-    takeaway.should_receive(:create_order_line).with('hawaiian', 2)
-    customer.order_food(takeaway,'hawaiian', 2)
+  it 'takes orders' do
+    items = [[dish1,2],[dish2,3]]
+    order = double :order, :customer => customer, :items => items
+    takeaway.create_order(customer,order)
+    expect(order.customer).to eq customer
+    expect(order.items).to eq [[dish1,2], [dish2, 3]]
   end
 
-  it 'creates an order' do
-    takeaway = double :takeaway
-    order_line1 = double :order_line
-    order_line2 = double :order_line
-    order_items = [order_line1,order_line2]
-    takeaway.should_receive(:create_order).with(customer,order_lines)
-    customer.order_food(takeaway,'hawaiian', 2)
-  end
-
-
-
-
-  end
+end
