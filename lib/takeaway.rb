@@ -4,7 +4,7 @@ require_relative 'order'
 class Takeaway
 
   attr_reader :name
-  attr_accessor :menu, :order_items
+  attr_accessor :menu, :order_items, :customer
 
   def initialize(name, menu)
     @name = name
@@ -12,6 +12,6 @@ class Takeaway
   end
 
   def create_order(customer, items)
-    Order.new(customer, @items)
+    Order.new(customer, items)
   end
 end

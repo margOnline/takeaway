@@ -22,4 +22,9 @@ describe Takeaway do
     expect(order.items).to eq [[dish1,2], [dish2, 3]]
   end
 
+  xit 'stores customer details' do
+    customer = Customer.new('Marco', 'Polo', '0123456789', '25 City Road, London, EC1Y 1AA')
+    expect(takeaway.record_customer_details).to eq customer
+  end
+
 end

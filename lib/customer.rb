@@ -3,10 +3,10 @@ require 'takeaway'
 class Customer
 
   attr_reader :first_name
-  attr_accessor :last_name, :phone
+  attr_accessor :last_name, :phone, :address
 
-  def initialize(first_name, last_name, phone)
-    @first_name, @last_name, @phone = first_name, last_name, phone
+  def initialize(first_name, last_name, phone,address)
+    @first_name, @last_name, @phone, @address = first_name, last_name, phone, address
   end
 
   def fullname  
