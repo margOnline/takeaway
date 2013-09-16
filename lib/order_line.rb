@@ -1,8 +1,8 @@
-require 'dish'
 
 class OrderLine
 
   attr_reader :item, :quantity
+  attr_accessor :total
 
   def initialize(item, quantity)
     @item, @quantity = item, quantity
@@ -11,6 +11,5 @@ class OrderLine
   def total
     @item.price * @quantity
   end
-
 
 end

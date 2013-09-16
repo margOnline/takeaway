@@ -1,4 +1,3 @@
-require 'takeaway'
 
 class Customer
 

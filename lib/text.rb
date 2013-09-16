@@ -3,7 +3,7 @@ class Text
   ACCOUNT_SID = 'C45709457jfkld485798475jf4857043jf86'
   AUTH_TOKEN = 'a48950C4950kdfjoirtu495847575004'
   FROM_NUMBER = '441123456789'
-  TO_NUMBER = '44712311111'
+  TO_NUMBER = '447545190929'
 
   def twilio_client
     account_sid = TwilioCredentials::ACCOUNT_SID

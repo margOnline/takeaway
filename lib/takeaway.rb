@@ -1,17 +1,15 @@
-require_relative 'customer'
-require_relative 'order'
 
 class Takeaway
 
   attr_reader :name
-  attr_accessor :menu, :order_items, :customer
+  attr_accessor :orders
 
-  def initialize(name, menu)
+  def initialize(name)
     @name = name
-    @menu = menu
+    @orders = []
   end
 
-  def create_order(customer, items)
-    Order.new(customer, items)
+  def accept order
+    @orders << order
   end
 end
