@@ -1,0 +1,17 @@
+!!!
+%html 
+  %head
+    %title Takeaway Application
+    %link{rel: 'stylesheet', type: 'text/css', href: 'stylesheets/application.css'}
+
+  %body
+    %h1 Add Dish to Menu
+    %form{action: '#', method: 'post'}
+      %p
+        %label{for: 'dish'} Dish
+        %input{type:'text', name: 'dish', id: 'dish'}
+      %p
+        %label{for: 'price'} Price (&pound;)
+        %input{type: 'text', name: 'price', id: 'price'}
+      %p
+        %input{type: 'submit', class: 'button', value: 'Add Dish'} 

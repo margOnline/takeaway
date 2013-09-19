@@ -1,0 +1,16 @@
+!!!
+%html 
+  %head
+    %title Takeaway Application
+    %link{rel: 'stylesheet', type: 'text/css', href: 'stylesheets/application.css'}
+
+  %body
+    %h1 Jen's Pizzeria
+    %p What do you want to do?
+    %ul{class: 'main-menu'}
+      %li
+        %a{href: '/dish'} Add a dish to the Menu
+      %li
+        %a{href: '/order'} Create an Order
+      %li
+        %a{href: '/customer'} Add a customer
